@@ -1,3 +1,5 @@
+### Virtual IP Creation (Destination NAT | Port Forwarding
+
 woodydapogi-srv#config firewall vip
 woodydapogi-srv(vip)#edit WebServer
 woodydapogi-srv(vip)#set extip <public.ip.address>
@@ -9,8 +11,10 @@ woodydapogi-srv(vip)#set mappedport <internal_port>
 woodydapogi-srv(vip)#end
 
 
+### Creating Firewall Policy to allow Destination NAT Configuration
 woodydapogi-srv#config firewall policy
 woodydapogi-srv(policy)#edit <seq_num>
+woodydapogi-srv(<seq_num>)#set action accept
 woodydapogi-srv(<seq_num>)#set name <policy_name>
 woodydapogi-srv(<seq_num>)#set srcintf <public_int>
 woodydapogi-srv(<seq_num>)#set dstintf <dmz_int>
