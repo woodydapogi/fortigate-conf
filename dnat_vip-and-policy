@@ -13,7 +13,7 @@ woodydapogi-srv#config firewall policy
 woodydapogi-srv(policy)#edit <seq_num>
 woodydapogi-srv(<seq_num>)#set name <policy_name>
 woodydapogi-srv(<seq_num>)#set srcintf <public_int>
-woodydapogi-srv(<seq_num>)#set dstintf <internal_int>
+woodydapogi-srv(<seq_num>)#set dstintf <dmz_int>
 woodydapogi-srv(<seq_num>)#set srcaddr all
 woodydapogi-srv(<seq_num>)#set dstaddr WebServer
 woodydapogi-srv(<seq_num>)#set service ALL
