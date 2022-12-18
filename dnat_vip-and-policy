@@ -1,0 +1,19 @@
+woodydapogi-srv#config firewall vip
+woodydapogi-srv(vip)#edit WebServer
+woodydapogi-srv(vip)#set extip <public.ip.address>
+woodydapogi-srv(vip)#set extintf <public_int>
+woodydapogi-srv(vip)#set portforward enable
+woodydapogi-srv(vip)#set mappedip <internal.ip.address>
+woodydapogi-srv(vip)#set extport <external_port>
+woodydapogi-srv(vip)#set mappedport <internal_port>
+woodydapogi-srv(vip)#end
+
+
+woodydapogi-srv#config firewall policy
+woodydapogi-srv(policy)#set name <policy_name>
+woodydapogi-srv(policy)#set srcintf <public_int>
+woodydapogi-srv(policy)#set dstintf <internal_int>
+woodydapogi-srv(policy)#set srcaddr all
+woodydapogi-srv(policy)#set dstaddr WebServer
+woodydapogi-srv(policy)#set service ALL
+woodydapogi-srv(policy)#end
